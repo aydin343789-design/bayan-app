@@ -7,7 +7,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +30,6 @@ jobs:
           yes | buildozer -v android debug
         env:
           ANDROID_ACCEPT_LICENSES: "yes"
-          ANDROID_HOME: /home/runner/.buildozer/android/platform/android-sdk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
